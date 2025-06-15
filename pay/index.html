@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自販機R/Wシミュレーター</title>
+    <link rel="manifest" href="/manifest.json">
+    <!-- OGP情報 -->
+    <meta property="og:site_name" content="自販機R/Wシミュレーター">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="IT Acsess製自販機R/Wを再現しました。">
+    <meta property="og:url" content="https://henojin.com/ASHIDA/pay/index.html">
+    <meta property="og:image" content="https://henojin.com/ASHIDA/pay/bt.png">
+
+</head>
+<body>
+    <script>
+        if('serviceWorker' in navigator){
+	        navigator.serviceWorker.register('/ASHIDA/pay/pwa/serviceworker.js').then(function(){
+		    console.log("Service Worker is registered!!");
+	    });
+    }
+    </script>
+    <br>
+    <iframe src="screen/select-pay.html" width="600px" height="350px">
+    </iframe>
+    <br>
+    <div class="touchbt">
+        <img id="gazou" src="bt.png" onclick="touch()">
+    </div>
+    <audio id="audio" src="id-sound.wav"></audio>
+    <audio id="audio2" src="o-sori.wav"></audio>
+    <script src="index.js"></script>
+</body>
+</html>
+<style>
+    body{
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+        background-color: black;
+    }
+    .touchbt{
+        margin-top: 50px;
+
+    }
+</style>
